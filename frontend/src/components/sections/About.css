@@ -1,0 +1,170 @@
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  left: -200px;
+  top: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 30, 142, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about__header {
+  max-width: 700px;
+  margin-bottom: 64px;
+}
+
+.about__title {
+  margin: 16px 0 20px;
+}
+
+.about__title-main {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--white);
+  line-height: 1;
+}
+
+.about__title-sub {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3.5vw, 44px);
+  color: var(--yellow);
+  letter-spacing: 0.05em;
+}
+
+.about__desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-light);
+  max-width: 600px;
+}
+
+/* Pillars */
+.about__pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.pillar {
+  padding: 32px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  transition: transform 0.3s ease;
+}
+
+.pillar:hover {
+  transform: translateY(-4px);
+}
+
+.pillar__icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.pillar--yellow .pillar__icon { background: rgba(255, 215, 0, 0.12); color: var(--yellow); }
+.pillar--pink .pillar__icon { background: rgba(255, 30, 142, 0.12); color: var(--pink); }
+.pillar--cyan .pillar__icon { background: rgba(0, 200, 255, 0.12); color: var(--cyan); }
+
+.pillar__title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.pillar--yellow .pillar__title { color: var(--yellow); }
+.pillar--pink .pillar__title { color: var(--pink); }
+.pillar--cyan .pillar__title { color: var(--cyan); }
+
+.pillar__desc {
+  font-size: 14px;
+  color: var(--gray-light);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.pillar__line {
+  height: 2px;
+  width: 40px;
+}
+
+.pillar--yellow .pillar__line { background: var(--yellow); }
+.pillar--pink .pillar__line { background: var(--pink); }
+.pillar--cyan .pillar__line { background: var(--cyan); }
+
+/* Top corner accent */
+.pillar--yellow::before { content: ''; position: absolute; top: 0; right: 0; width: 0; height: 0; border-style: solid; border-width: 0 32px 32px 0; border-color: transparent var(--yellow) transparent transparent; }
+.pillar--pink::before { content: ''; position: absolute; top: 0; right: 0; width: 0; height: 0; border-style: solid; border-width: 0 32px 32px 0; border-color: transparent var(--pink) transparent transparent; }
+.pillar--cyan::before { content: ''; position: absolute; top: 0; right: 0; width: 0; height: 0; border-style: solid; border-width: 0 32px 32px 0; border-color: transparent var(--cyan) transparent transparent; }
+
+/* Stats */
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 64px;
+}
+
+.stat {
+  background: var(--jet);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.stat__value {
+  font-family: var(--font-display);
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat--yellow .stat__value { color: var(--yellow); }
+.stat--pink .stat__value { color: var(--pink); }
+.stat--cyan .stat__value { color: var(--cyan); }
+
+.stat__label {
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 0.15em;
+}
+
+/* Marquee */
+.about__marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  background: rgba(255, 215, 0, 0.02);
+}
+
+.about__marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+.about__marquee-item {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--yellow);
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+  padding-right: 20px;
+}
