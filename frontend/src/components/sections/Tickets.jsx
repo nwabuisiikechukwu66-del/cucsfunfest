@@ -183,11 +183,11 @@ export default function Tickets() {
               <div className="transfer-info__label mono">BANK TRANSFER OPTION</div>
               <div className="transfer-info__row">
                 <span className="mono">Account Name:</span>
-                <span>CUCS FunFest 2026</span>
+                <span>EZEKIEL OBUMNEME</span>
               </div>
               <div className="transfer-info__row">
                 <span className="mono">Bank:</span>
-                <span>— Contact OBUM or BIGJOE —</span>
+                <span>— 7087293234 (OPAY) -</span>
               </div>
               <p className="transfer-info__note mono">
                 After transfer, submit your reference below. Admin will verify and release your ticket via email.
