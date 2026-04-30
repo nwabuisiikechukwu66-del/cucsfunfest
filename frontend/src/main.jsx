@@ -6,7 +6,8 @@ import { Toaster } from 'react-hot-toast'
 import App from './App.jsx'
 import './index.css'
 
-const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL)
+const convexUrl = import.meta.env.VITE_CONVEX_URL || ''
+const convex = new ConvexReactClient(convexUrl.replace(/\/$/, ""))
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -4,7 +4,7 @@ import { api } from '../../../convex/_generated/api.js'
 import { useNavigate } from 'react-router-dom'
 import {
   SignIn, SignOut, Users, CurrencyNgn, QrCode, Warning,
-  CheckCircle, Clock, ArrowRight, MagnifyingGlass, Download
+  CheckCircle, Clock, ArrowRight, MagnifyingGlass, Download, Spinner
 } from '@phosphor-icons/react'
 import { formatNaira, formatDate } from '../lib/utils.js'
 import toast from 'react-hot-toast'
@@ -86,6 +86,18 @@ export default function AdminPage() {
     const a = document.createElement('a')
     a.href = url; a.download = 'cucs-funfest-attendees.csv'
     a.click()
+  }
+
+  if (attendees === undefined && token) {
+    return (
+      <div className="admin-login">
+        <div className="admin-login__box" style={{ textAlign: 'center', padding: '60px 40px' }}>
+          <Spinner size={48} className="spin" color="var(--yellow)" />
+          <div className="mono" style={{ color: 'var(--yellow)', marginTop: 24, letterSpacing: '0.1em' }}>CONNECTING TO BACKEND...</div>
+          <div className="mono" style={{ color: 'var(--gray)', fontSize: 12, marginTop: 8 }}>Verifying administrative session</div>
+        </div>
+      </div>
+    )
   }
 
   if (!token || attendees === null) {
